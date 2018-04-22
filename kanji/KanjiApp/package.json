@@ -1,0 +1,42 @@
+{
+  "name": "KanjiApp",
+  "version": "0.3.0",
+  "description": "Kanji to Hiragana translation Application",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "@google-cloud/vision": "^0.15.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-validator": "^5.0.0",
+    "kuroshiro": "^0.2.1",
+    "multer": "^1.3.0",
+    "path": "^0.12.7",
+    "sleep": "^5.1.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.0.1",
+    "proxyquire": "^1.8.0",
+    "request": "^2.81.0",
+    "sleep": "^5.1.1",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zhao-Weng/KanjiApp"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

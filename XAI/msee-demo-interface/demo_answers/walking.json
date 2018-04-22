@@ -1,0 +1,132 @@
+{
+    "soc": "this-is-soc-id",
+    "storyline": "this-is-a-storyline-line",
+    "isPolar": true,
+    "answer": true,
+    "translatedXML": "",
+
+    "answerParseGraph":
+      {
+        "graphs": [
+          {
+            "nodes": [
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a",
+                "title": "Walking",
+                "type": "Walk"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a_Move_",
+                "title": "Person 18",
+                "type": "Person"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a",
+                "title": "Walking",
+                "type": "Walk"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a_Move_",
+                "title": "Person 16",
+                "type": "Person"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a",
+                "title": "Walking",
+                "type": "Walk"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a_Move_",
+                "title": "Person 1",
+                "type": "Person"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a",
+                "title": "Walking",
+                "type": "Walk"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a_Move_",
+                "title": "Person 19",
+                "type": "Person"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a",
+                "title": "Walking",
+                "type": "Walk"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a_Move_",
+                "title": "Person 0",
+                "type": "Person"
+              }
+            ],
+            "links": [
+              {
+                "source": 0,
+                "target": 1,
+                "type": "AGENT"
+              },
+              {
+                "source": 2,
+                "target": 3,
+                "type": "AGENT"
+              },
+              {
+                "source": 4,
+                "target": 5,
+                "type": "AGENT"
+              },
+              {
+                "source": 6,
+                "target": 7,
+                "type": "AGENT"
+              },
+              {
+                "source": 8,
+                "target": 9,
+                "type": "AGENT"
+              }
+            ]
+          }
+        ]
+      },
+    "answerDetails": [
+      {
+        "startTime": "2014-2-22 19:00:20",
+        "endTime": "2014-2-22 19:00:25",
+        "tracks": [
+          {
+            "id": "104",
+            "vid": "corresponding vertex id",
+            "bvar": "104"
+          }
+        ]
+      }
+    ],
+    "queryGraph": {
+        "graphs": [
+          {
+            "nodes": [
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a",
+                "type": "Walking"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a_Move_",
+                "type": "Person"
+              }
+            ],
+            "links": [
+              {
+                "source": 1,
+                "target": 0,
+                "type": "AGENT"
+              }
+            ]
+          }
+        ]
+      },
+    "confidence": 0.90,
+    "timeEscaped": 0.94
+}

@@ -1,0 +1,2 @@
+To use with IntelliJ, set the Scala home to:
+  /usr/local/opt/scala/idea

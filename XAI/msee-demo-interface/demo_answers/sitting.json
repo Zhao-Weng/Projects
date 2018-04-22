@@ -1,0 +1,87 @@
+{
+    "soc": "this-is-soc-id",
+    "storyline": "this-is-a-storyline-line",
+    "isPolar": true,
+    "answer": true,
+    "translatedXML": "",
+
+    "answerParseGraph":
+      {
+        "graphs": [
+          {
+            "nodes": [
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a",
+                "title": "Sitting",
+                "type": "Sitting"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a_Move_",
+                "title": "Person 0",
+                "type": "Person"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a",
+                "title": "Sitting",
+                "type": "Sitting"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a_Move_",
+                "title": "Person 1",
+                "type": "Person"
+              }
+            ],
+            "links": [
+              {
+                "source": 0,
+                "target": 1,
+                "type": "AGENT"
+              },
+              {
+                "source": 2,
+                "target": 3,
+                "type": "AGENT"
+              }
+            ]
+          }
+        ]
+      },
+    "answerDetails": [
+      {
+        "startTime": "2014-2-22 19:00:45",
+        "endTime": "2014-2-22 19:01:00",
+        "tracks": [
+          {
+            "id": "104",
+            "vid": "corresponding vertex id",
+            "bvar": "104"
+          }
+        ]
+      }
+    ],
+    "queryGraph": {
+        "graphs": [
+          {
+            "nodes": [
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a",
+                "type": "Sitting"
+              },
+              {
+                "id": "bc568c45-7b41-49b0-93f4-62bb0895cb3a_Move_",
+                "type": "Person"
+              }
+            ],
+            "links": [
+              {
+                "source": 1,
+                "target": 0,
+                "type": "AGENT"
+              }
+            ]
+          }
+        ]
+      },
+    "confidence": 0.90,
+    "timeEscaped": 0.94
+}

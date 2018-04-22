@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eXplainable Artificial Intelligence (XAI), VCLA</title>
+    <script type="text/javascript" src="lib/dot/dotgraph.js"></script>
+    <script type="text/javascript" src="lib/dot/dotparser.js"></script>
+    <script type="text/javascript" src="lib/dot/jgraph.js"></script>
+    <script type="text/javascript" src="lib/d3/d3.v4.min.js"></script>
+    <script type="text/javascript" src="lib/utils/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/utils/simpleheat.js"></script>
+    <!--<script type="text/javascript" src="lib/utils/heatmap.min.js"></script>-->
+    <script type="text/javascript" src="public/javascripts/utils.js"></script>
+    <script type="text/javascript" src="public/javascripts/visualizer.js"></script>
+    <link type="text/css" rel="stylesheet" href="public/stylesheets/style.css">
+</head>
+
+<body>
+    <div>
+        <h1 align="center">eXplainable Artificial Intelligence (XAI)<br /> VCLA</h1>
+        <div id="videoPanel" style="display:inline-block;margin-right:18px;">
+            <h3>Video Panel</h3>
+            <div class="dropdown">
+                <button onclick="getProcessTypes()" class="dropbtn">process type</button>
+                <div id="typeDropdown" class="dropdown-content">
+                    <a href="#fullvideo">full video</a>
+                    <a><label>From</label><input type="range" id="blur" value="10" min="1" max="200"></a>
+                    <a><label>To</label><input type="range" id="blur" value="100" min="1" max="200"></a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button onclick="getVideoFiles()" class="dropbtn">choose video</button>
+                <div id="videoDropdown" class="dropdown-content">
+                    <a href="#home">Auditorium</a>
+                </div>
+            </div>
+            <div id="videoPlay" align="left">
+                <video width="600" controls>
+                    <source src="./videos/view-HC3.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+        </div>
+
+        <div id="graphPanel" style="display:inline-block">
+            <h3>STC-PG</h3>
+            <div>
+                <label>
+                    <input type="file" name="file-upload" id="inFile" style="display: none;" />
+                    <span id="inSelector">Upload Parse Graph</span>
+                </label>
+            </div>
+            <div id="chart">
+                <svg width="600" height="387" viewBox="0 0 600 387"></svg>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <div id="wrapper">
+        <div id="menu">
+            <p class="welcome">Welcome, <b></b></p>
+            <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+            <div style="clear:both"></div>
+        </div>
+
+        <div id="chatbox"></div>
+
+        <form name="message" action="">
+            <input name="usermsg" type="text" id="usermsg" size="63" />
+            <input name="submitmsg" type="submit"  id="submitmsg" onclick="msgSent()"/>
+        </form>
+    </div>
+    <script type="text/javascript">
+        var inFile;
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            inFile = document.getElementById("inFile");
+            inFile.addEventListener('change', function () {
+                if (!inFile.files.length) {
+                    alert("Please select a file!");
+                    return;
+                }
+                var fi = inFile.files[0];
+                var reader = new FileReader();
+                var textType = /text.*/;
+                if (fi.type.match(textType)) {
+                    reader.onload = function() {
+                        var str = reader.result;
+                        //console.log(str);
+                        var jp = dot2json(str);
+                        console.log(jp);
+                        createGraph(jp.root);
+                    };
+                    reader.readAsText(fi);
+                }
+            });
+        } else {
+            alert('The File APIs are not fully supported in this browser.')
+        }
+
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function getVideoFiles() {
+            var path = "./videos";
+            document.getElementById("videoDropdown").classList.toggle("show");
+        }
+
+        function getProcessTypes() {
+            document.getElementById("typeDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+    </script>
+
+</body>
+</html>

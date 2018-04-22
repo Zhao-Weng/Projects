@@ -1,0 +1,8 @@
+{
+  "name": "Kanji Translation App",
+  "description": "A web app for translating kanji found within images",
+  "repository": "https://github.com/Zhao-Weng/KanjiApp",
+  "logo": "https://imgur.com/l8wpsw6",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}

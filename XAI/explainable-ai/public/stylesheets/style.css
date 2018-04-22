@@ -1,0 +1,258 @@
+#arrow0 {
+    fill: #66ccff;
+}
+
+#arrow1 {
+    fill: red;
+}
+
+canvas {
+    border: 2px solid deepskyblue;
+}
+
+line {
+    stroke: #66ccff;
+    stroke-width: 4px;
+}
+
+path {
+    fill: #66ccff;
+    stroke-width: 4px;
+}
+
+rect {
+  fill: none;
+  pointer-events: all;
+}
+
+pre {
+  font-size: 18px;
+}
+
+circle {
+	fill: #ccc;
+	stroke: #566573;
+	stroke-width: 2px;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+
+.button {
+    width:   70px;
+    color:   white;
+    float:   left;
+    border:  none;
+    display: inline-block;
+    font-size:  11px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ff9933;
+}
+
+svg {
+    border:1px lightgray solid;
+    background-color: beige;
+}
+
+text {
+    fill: #020204;
+    font-family: "Times New Roman", sans-serif;
+    font-size: medium;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.string, .regexp {
+  color: #f39;
+}
+
+.keyword {
+  color: #00c;
+}
+
+.comment {
+  color: #555;
+}
+
+.number {
+  color: #369;
+}
+
+.class, .special {
+  color: #1181B8;
+}
+
+/* File uploader */
+#inSelector {
+  padding: 3px 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #ddd;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Tooltip setting */
+div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 70px;
+    height: 30px;
+    padding: 1px;
+    font: 11px sans-serif;
+    background: #EBF5FB;
+    border: 0px;
+    border-radius: 8px;
+    /*  pointer-events: none;    This line needs to be removed */
+}
+
+/* Styles for Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display:inline-block;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
+/* CSS Document for Chat Box */
+body {
+    font:12px "Times New Roman";
+    color: #222;
+    text-align:center;
+    padding:35px;
+}
+
+form, p, span {
+    margin:0;
+    padding:0;
+}
+
+input { font:12px arial; }
+
+a {
+    color:#0000FF;
+    text-decoration:none;
+}
+
+a:hover { text-decoration:underline; }
+
+#wrapper, #loginform {
+    margin:0 auto;
+    padding-bottom:25px;
+    background:#EBF4FB;
+    width: 1204px;
+    border:1px solid #ACD8F0; }
+
+#loginform { padding-top:18px; }
+
+#loginform p { margin: 5px; }
+
+#chatbox {
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    padding:10px;
+    background:#fff;
+    height:270px;
+    width:1130px;
+    border:1px solid #ACD8F0;
+    overflow:auto; }
+
+#usermsg {
+    width:395px;
+    border:1px solid #ACD8F0;
+}
+
+#submit { width: 60px; }
+
+.error { color: #ff0000; }
+
+#menu { padding:12.5px 25px 12.5px 25px; }
+
+.welcome { float:left; }
+
+.logout { float:right; }
+
+.msgln { margin:0 0 2px 0; }
+
+.bubble{
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    vertical-align: top;
+}
+
+.bubble::before {
+    background-color: #F2F2F2;
+    content: "\00a0";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    transform:             rotate( 29deg ) skew( -35deg );
+    -moz-transform:    rotate( 29deg ) skew( -35deg );
+    -ms-transform:     rotate( 29deg ) skew( -35deg );
+    -o-transform:      rotate( 29deg ) skew( -35deg );
+    -webkit-transform: rotate( 29deg ) skew( -35deg );
+    width:  20px;
+}
+
+.me {
+    float: left;
+    margin: 5px 45px 5px 20px;
+}
+
+.me::before {
+    box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+    left: -9px;
+}
+
+.you {
+    float: right;
+    margin: 5px 20px 5px 45px;
+}
+
+.you::before {
+    box-shadow: 2px -2px 2px 0 rgba( 178, 178, 178, .4 );
+    right: -9px;
+}

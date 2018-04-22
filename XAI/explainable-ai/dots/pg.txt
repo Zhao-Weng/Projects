@@ -1,0 +1,134 @@
+ digraph G {
+
+ scene_1[label="scene", shape="diamond"];
+ scene_2[label="scene", shape="diamond"];
+
+ person11[label="person1", shape="oval", action="sitting", cloth_style="half_sleeve", glass="no", hat="no", hair_style="short", gender="male", age="30", alpha=0.4, beta=0.6, gamma=0.2]
+ person12[label="person2", shape="oval", action="sitting", cloth_style="half_sleeve", glass="no", hat="no", hair_style="short", gender="female", age="30", alpha=0.35, beta=0.51, gamma=0.15]
+
+ full_body11[label="full body", shape = "oval", action="sitting", cloth_style="half_sleeve", glass="no", hat="no", hair_style="short", gender="male", age="30",alpha=0.4,beta=0.42,gamma=0.1]
+ upper_body11[label="upper body", shape = "oval", action="standing", cloth_style="half_sleeve", glass="no", hat="no", hair_style="short", gender="male", age="30",alpha=0.8,beta=0.5,gamma=0.2]
+ lower_body11[label="lower body", shape = "oval", action="", cloth_style="", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.32]
+ head11[label="head", shape = "oval", action="", cloth_style="", glass="no", hat="no", hair_style="short", gender="male", age="30",alpha=0.1,beta=0,gamma=0.54]
+ left_arm11[label="left arm", shape = "oval", action="standing", cloth_style="half_sleeve", glass="", hat="", hair_style="", gender="",age="",alpha=0.62,beta=0,gamma=0.09]
+ right_arm11[label="right arm", shape = "oval", action="standing", cloth_style="half_sleeve", glass="", hat="", hair_style="", gender="",age="",alpha=0.54,beta=0,gamma=0.01]
+ torso11[label="torso", shape = "oval", action="sitting", cloth_style="half_sleeve", glass="", hat="", hair_style="short", gender="male", age="",alpha=0.68,beta=0,gamma=0.3]
+ left_leg11[label="left leg", shape = "oval", action="", cloth_style="", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.2]
+ right_leg11[label="right leg", shape = "oval", action="", cloth_style="", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.18]
+
+ keypoint_head11[label="keypoint_h_p1", shape = "oval" keyPoints="1178,614,5"]
+ keypoint_left_arm11[label="keypoint_l_a_p1", shape = "oval" keyPoints="1150,627,3"]
+ keypoint_right_arm11[label="keypoint_r_a_p1", shape = "oval" keyPoints="1208,625,3"]
+ keypoint_torso11[label="keypoint_t_p1", shape = "oval" keyPoints="1178,643,10,1180,673,10"]
+ keypoint_left_leg11[label="keypoint", shape = "oval"]
+ keypoint_right_leg11[label="keypoint", shape = "oval"]
+
+ full_body12[label="full body", shape = "oval", action="sitting", cloth_style="half_sleeve", glass="no", hat="no", hair_style="short", gender="female", age="30",alpha=0.32,beta=0.38,gamma=0.1]
+ upper_body12[label="upper body", shape = "oval", action="sitting", cloth_style="half_sleeve", glass="no", hat="no", hair_style="short", gender="female", age="30",alpha=0.6,beta=0.29,gamma=0.12]
+ lower_body12[label="lower body", shape = "oval", action="", cloth_style="", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.21]
+ head12[label="head", shape = "oval", action="sitting", cloth_style="", glass="no", hat="no", hair_style="short", gender="female", age="30",alpha=0.2,beta=0,gamma=0.22]
+ left_arm12[label="left arm", shape = "oval", action="", cloth_style="half_sleeve", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.8]
+ right_arm12[label="right arm", shape = "oval", action="sitting", cloth_style="half_sleeve", glass="", hat="", hair_style="", gender="",age="",alpha=0.39,beta=0,gamma=0.18]
+ torso12[label="torso", shape = "oval", action="sitting", cloth_style="half_sleeve", glass="", hat="", hair_style="", gender="female", age="30",alpha=0.7,beta=0,gamma=0.1]
+ left_leg12[label="left leg", shape = "oval", action="", cloth_style="", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.19]
+ right_leg12[label="right leg", shape = "oval", action="", cloth_style="", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.19]
+
+ keypoint_head12[label="keypoint_h_p2", shape = "oval" keyPoints="1285,628,5"]
+ keypoint_left_arm12[label="keypoint_l_a_p2", shape = "oval" keyPoints="1263,673,3"]
+ keypoint_right_arm12[label="keypoint_r_a_p2", shape = "oval" keyPoints="1313,668,3"]
+ keypoint_torso12[label="keypoint_t_p2", shape = "oval" keyPoints="1288,654,10,1284,680,10"]
+ keypoint_left_leg12[label="keypoint", shape = "oval"]
+ keypoint_right_leg12[label="keypoint", shape = "oval"]
+
+
+
+ person21[label="person1", shape="oval", action="sitting", cloth_style="half_sleeve", glass="no", hat="no", hair_style="short", gender="male", age="30",alpha=0.4,beta=0.6,gamma=0.2]
+ person22[label="person2", shape="oval", action="sitting", cloth_style="half_sleeve", glass="no", hat="no", hair_style="short", gender="female", age="30",alpha=0.35,beta=0.51,gamma=0.15]
+
+ full_body21[label="full body", shape = "oval", action="sitting", cloth_style="half_sleeve", glass="no", hat="no", hair_style="short", gender="male", age="30",alpha=0.4,beta=0.42,gamma=0.1]
+ upper_body21[label="upper body", shape = "oval", action="standing", cloth_style="half_sleeve", glass="no", hat="no", hair_style="short", gender="male", age="30",alpha=0.8,beta=0.5,gamma=0.2]
+ lower_body21[label="lower body", shape = "oval", action="", cloth_style="", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.32]
+ head21[label="head", shape = "oval", action="", cloth_style="", glass="no", hat="no", hair_style="short", gender="male", age="30",alpha=0.1,beta=0,gamma=0.54]
+ left_arm21[label="left arm", shape = "oval", action="standing", cloth_style="half_sleeve", glass="", hat="", hair_style="", gender="",age="",alpha=0.62,beta=0,gamma=0.09]
+ right_arm21[label="right arm", shape = "oval", action="standing", cloth_style="half_sleeve", glass="", hat="", hair_style="", gender="",age="",alpha=0.54,beta=0,gamma=0.01]
+ torso21[label="torso", shape = "oval", action="sitting", cloth_style="half_sleeve", glass="", hat="", hair_style="short", gender="male",age="",alpha=0.68,beta=0,gamma=0.3]
+ left_leg21[label="left leg", shape = "oval", action="", cloth_style="", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.2]
+ right_leg21[label="right leg", shape = "oval", action="", cloth_style="", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.18]
+
+ keypoint_head21[label="keypoint", shape = "oval" keyPoints="1178,614,5"]
+ keypoint_left_arm21[label="keypoint", shape = "oval" keyPoints="1150,627,3"]
+ keypoint_right_arm21[label="keypoint", shape = "oval" keyPoints="1208,625,3"]
+ keypoint_torso21[label="keypoint", shape = "oval" keyPoints="1178,643,10,1180,673,10"]
+ keypoint_left_leg21[label="keypoint", shape = "oval"]
+ keypoint_right_leg21[label="keypoint", shape = "oval"]
+
+ full_body22[label="full body", shape = "oval", action="sitting", cloth_style="half_sleeve", glass="no", hat="no", hair_style="short", gender="female",age="30",alpha=0.32,beta=0.38,gamma=0.1]
+ upper_body22[label="upper body", shape = "oval", action="sitting", cloth_style="half_sleeve", glass="no", hat="no", hair_style="short", gender="female",age="30",alpha=0.6,beta=0.29,gamma=0.12]
+ lower_body22[label="lower body", shape = "oval", action="", cloth_style="", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.21]
+ head22[label="head", shape = "oval", action="sitting", cloth_style="", glass="no", hat="no", hair_style="short", gender="female",age="30",alpha=0.2,beta=0,gamma=0.22]
+ left_arm22[label="left arm", shape = "oval", action="", cloth_style="half_sleeve", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.8]
+ right_arm22[label="right arm", shape = "oval", action="sitting", cloth_style="half_sleeve", glass="", hat="", hair_style="", gender="",age="",alpha=0.39,beta=0,gamma=0.18]
+ torso22[label="torso", shape = "oval", action="sitting", cloth_style="half_sleeve", glass="", hat="", hair_style="", gender="female", age="30",alpha=0.7,beta=0,gamma=0.1]
+ left_leg22[label="left leg", shape = "oval", action="", cloth_style="", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.19]
+ right_leg22[label="right leg", shape = "oval", action="", cloth_style="", glass="", hat="", hair_style="", gender="",age="",alpha=0,beta=0,gamma=0.19]
+
+ keypoint_head22[label="keypoint", shape = "oval" keyPoints="1285,628,5"]
+ keypoint_left_arm22[label="keypoint", shape = "oval" keyPoints="1263,673,3"]
+ keypoint_right_arm22[label="keypoint", shape = "oval" keyPoints="1313,668,3"]
+ keypoint_torso22[label="keypoint", shape = "oval" keyPoints="1288,654,10,1284,680,10"]
+ keypoint_left_leg22[label="keypoint", shape = "oval"]
+
+
+ scene_1 -> scene_2[label="after 90 sec"];
+
+ scene_1 -> person11;
+ scene_1 -> person12;
+
+// Person 1
+ person11 -> full_body11;
+ full_body11 -> upper_body11;
+ upper_body11 -> head11 -> keypoint_head11;
+ upper_body11 -> left_arm11 -> keypoint_left_arm11;
+ upper_body11 -> right_arm11 -> keypoint_right_arm11;
+ upper_body11 -> torso11 -> keypoint_torso11;
+ full_body11 -> lower_body11
+ lower_body11 -> left_leg11 -> keypoint_left_leg11;
+ lower_body11 -> right_leg11 -> keypoint_right_leg11;
+
+// Person 2
+ person12 -> full_body12;
+ full_body12 -> upper_body12;
+ upper_body12 -> head12 -> keypoint_head12;
+ upper_body12 -> left_arm12 -> keypoint_left_arm12;
+ upper_body12 -> right_arm12 -> keypoint_right_arm12;
+ upper_body12 -> torso12 -> keypoint_torso12;
+ full_body12 -> lower_body12
+ lower_body12 -> left_leg12 -> keypoint_left_leg12;
+ lower_body12 -> right_leg12 -> keypoint_right_leg12;
+
+
+ scene_2 -> person21;
+ scene_2 -> person22;
+
+// Person 1
+ person21 -> full_body21;
+ full_body21 -> upper_body21;
+ upper_body21 -> head21 -> keypoint_head21;
+ upper_body21 -> left_arm21 -> keypoint_left_arm21;
+ upper_body21 -> right_arm21 -> keypoint_right_arm21;
+ upper_body21 -> torso21 -> keypoint_torso21;
+ full_body21 -> lower_body21
+ lower_body21 -> left_leg21 -> keypoint_left_leg21;
+ lower_body21 -> right_leg21 -> keypoint_right_leg21;
+
+// Person 2
+ person22 -> full_body22;
+ full_body22 -> upper_body22;
+ upper_body22 -> head22 -> keypoint_head22;
+ upper_body22 -> left_arm22 -> keypoint_left_arm22;
+ upper_body22 -> right_arm22 -> keypoint_right_arm22;
+ upper_body22 -> torso22 -> keypoint_torso22;
+ full_body22 -> lower_body22
+ lower_body22 -> left_leg22 -> keypoint_left_leg22;
+ lower_body22 -> right_leg22 -> keypoint_right_leg22;
+}

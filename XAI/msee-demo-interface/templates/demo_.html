@@ -1,0 +1,304 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div id="main-container" class="container-fluid">
+    <div class="row">
+      <div id="left-container" class="col-md-12">
+        <div id="video-container" class="container-fluid">
+
+          <div id="videos" class="row"></div>
+          <div class="row">
+            <div id="main-vc" class="col-md-12"></div>
+          </div>
+
+          <div id="p-time-range" class="row">
+            <div class="col-md-12">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon" id="ptr-cur-addon">Current Time</span>
+                        <input id="ptr-cur" type="text" class="form-control" value="0" aria-describedby="atr-cur-addon">
+                        <span class="input-group-btn">
+                          <button id="ptr-set-start" class="btn btn-default" type="button">Set start time</button>
+                          <button id="ptr-set-end" class="btn btn-default" type="button">Set end time</button>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon" id="ptr-start-addon">Start Time</span>
+                        <input id="ptr-start" type="text" class="form-control" value="0" aria-describedby="atr-start-addon">
+                      </div>
+                    </div>
+
+                    <div class="col-md-3">
+                      <div class="input-group input-group-sm">
+                        <span class="input-group-addon" id="ptr-end-addon">End Time</span>
+                        <input id="ptr-end" type="text" class="form-control" value="0" aria-describedby="atr-end-addon">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="container-fluid">
+          <div id="interaction-area" class="row">
+            <ul class="nav nav-tabs">
+              <li role="presentation" class="active"><a href="#" id="create-obj-tab-a" class="m-tab-a" data-tab="create-obj-tab" data-toggle="tab">Add Objects</a></li>
+              <li role="presentation"><a id="create-query-tab-a" href="#" class="m-tab-a" data-tab="create-query-tab" data-toggle="tab">Query</a></li>
+              <li role="presentation"><a href="#" id="visualization-tab-a" class="m-tab-a" data-tab="visualization-tab" data-toggle="tab">Visualization</a></li>
+              <li role="presentation"><a href="#" id="query-test-tab-a" class="m-tab-a" data-tab="query-test-tab" data-toggle="tab">Query Debug</a></li>
+            </ul>
+
+            <div id="create-obj-tab" class="m-tab">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="video-anno" id="video-anno"></div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Objects</div>
+                    <div class="panel-body">
+                      <div id="objects-pool"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6" id="anno-info-panel">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Add Objects</div>
+                    <div class="panel-body">
+
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="btn-group">
+                            <button id="select-view-dropdown-btn" class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                              <span id="select-view-dropdown-span">Select a view</span>
+                              <span class="caret"></span>
+                            </button>
+                            <ul id="select-view-dropdown-ul" class="dropdown-menu" aria-labelledby="select-view-dropdown-btn">
+                              <li class="dropdown-header">Select a view</li>
+                            </ul>
+                          </div>
+                          <div id="anno-type-radios" class="btn-group" data-toggle="buttons" data-otype="bbox">
+                            <label class="btn btn-default btn-sm">
+                              <input type="radio" name="anno-type-radio" data-at="empty" id="" autocomplete="off">
+                              Generic
+                            </label>
+                            <label class="btn btn-default btn-sm active">
+                              <input type="radio" name="anno-type-radio" data-at="bbox" id="" autocomplete="off" checked>
+                              Bounding box
+                            </label>
+                            <label class="btn btn-default btn-sm">
+                              <input type="radio" name="anno-type-radio" data-at="point" id="" autocomplete="off">
+                              Point
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <p>
+                            <div id="oname-input-group" class="input-group input-group-sm">
+                              <span class="input-group-addon" id="anno-y-addon">Name</span>
+                              <input id="anno-name" type="text" class="form-control" placeholder="Object Name" aria-describedby="anno-y-addon">
+                            </div>
+                          </p>
+                          <p>
+                            <!-- <div class="input-group input-group-sm">
+                              <span class="input-group-addon" id="anno-ot-addon">*Object</span>
+                              <input id="anno-ot" type="text" class="form-control" aria-describedby="anno-ot-addon">
+                            </div> -->
+
+
+                            <div class="btn-group">
+                              <div class="dropdown">
+                                <button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                  <span id="anno-ot-span" data-otype="bbox">Object Type</span>
+                                  <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                  <li class="dropdown-header">Object Type</li>
+                                  {% for obj in objs %}
+                                    <li><a class="anno-ot-a" href="#">{{ obj }}</a></li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                            </div>
+
+                          </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                              <div class="input-group input-group-sm">
+                                <span class="input-group-addon" id="anno-fn-addon">Frame #</span>
+                                <input id="anno-fn" type="text" class="form-control" placeholder="0" aria-describedby="anno-fn-addon">
+                              </div>
+                            </p>
+                            <p>
+                              <div id="anno-bbox">
+                                <div class="row">
+                                  <div class="col-md-3">
+                                    <div class="input-group input-group-sm">
+                                      <span class="input-group-addon" id="anno-x1-addon">x1</span>
+                                      <input id="anno-x1" type="text" class="form-control" value="0" aria-describedby="anno-x1-addon">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <div class="input-group input-group-sm">
+                                      <span class="input-group-addon" id="anno-y1-addon">y1</span>
+                                      <input id="anno-y1" type="text" class="form-control" value="0" aria-describedby="anno-y1-addon">
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-3">
+                                    <div class="input-group input-group-sm">
+                                      <span class="input-group-addon" id="anno-w-addon">w</span>
+                                      <input id="anno-w" type="text" class="form-control" value="0" aria-describedby="anno-w-addon">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-3">
+                                    <div class="input-group input-group-sm">
+                                      <span class="input-group-addon" id="anno-h-addon">h</span>
+                                      <input id="anno-h" type="text" class="form-control" value="0" aria-describedby="anno-h-addon">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div id="anno-point">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="input-group input-group-sm">
+                                      <span class="input-group-addon" id="anno-x-addon">x</span>
+                                      <input id="anno-x" type="text" class="form-control" value="0" aria-describedby="anno-x-addon">
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="input-group input-group-sm">
+                                      <span class="input-group-addon" id="anno-y-addon">y</span>
+                                      <input id="anno-y" type="text" class="form-control" value="0" aria-describedby="anno-y-addon">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </p>
+                        </div>
+                      </div>
+                      <p>
+                        <button id="object-create-btn" class="btn btn-primary btn-sm" type="button">Add</button>
+                      </p>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div id="create-query-tab" class="m-tab">
+
+            </div> <!-- #create-query-tab -->
+
+
+
+            <div id="visualization-tab" class="m-tab">
+              <div class="row">
+
+                <div class="col-md-7">
+                  <div class="text-center" id="vis-3d"></div>
+                </div>
+
+                <div class="col-md-5">
+                  <div class="panel panel-default">
+                    <!-- <div class="panel-heading">Graph</div> -->
+                    <div class="panel-body">
+
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="btn-group btn-group-sm" role="group" aria-label="d">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span id="select-graph-dropdown-span">
+                              Select graph</span>&nbsp;<span id="select-graph-count-span" class="badge">0</span>&nbsp;<span class="caret"></span>
+                            </button>
+                            <ul id="select-graph-dropdown-ul" data-gid="0" class="dropdown-menu">
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div id="show-radios" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-default btn-sm active" id="graph-showall">
+                              <input type="radio" name="show-radio" id="graph-showall-radio" autocomplete="off" checked>
+                              Show All
+                            </label>
+                            <label class="btn btn-default btn-sm" id="graph-showans">
+                              <input type="radio" name="show-radio" id="graph-showans-radio" autocomplete="off">
+                              Show Answer
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div id="canvas-pg"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div id="query-test-tab" class="m-tab">
+              <!--
+              <div class="row">
+                <div class="col-md-12">
+                  <textarea id="query-test-xml" class="form-control" rows="10"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <button type="button" class="btn btn-primary" id="query-test-submit">Submit</button>
+                </div>
+              </div>-->
+              <div class="row">
+                <div class="col-md-6">
+                  Error Message
+                  <textarea id="query-test-err" class="form-control monospace" rows="10"></textarea>
+                </div>
+                <div class="col-md-6">
+                  Number of graph returned
+                  <textarea id="query-test-res" class="form-control monospace" rows="1"></textarea>
+                  Answer details returned (converted to JSON)
+                  <textarea id="query-test-details" class="form-control monospace" rows="7"></textarea>
+                </div>
+              </div>
+              <hr/>
+              <div class="row">
+                <div class="col-md-6">
+                  Query Object
+                  <textarea id="query-test-request" class="form-control monospace" rows="10"></textarea>
+                </div>
+                <div class="col-md-6">
+                  Translated XML Query
+                  <textarea id="query-test-translated" class="form-control monospace" rows="10"></textarea>
+                </div>
+              </div>
+            </div>
+
+          </div>
+    </div>
+  </div>
+  <script>
+    var socMetadata = {{ soc_metadata | safe }};
+    var ontologyGraph = {{ ont | safe }};
+  </script>
+{% endblock %}

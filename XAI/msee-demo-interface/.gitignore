@@ -1,0 +1,6 @@
+*.pyc
+cache/
+static/img/
+static/data/*
+static/viz_3d/
+!static/data/v3d.config.json
